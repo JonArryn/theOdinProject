@@ -1,0 +1,17 @@
+html {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+a {
+  color: skyblue;
+}
+
+nav > div > p {
+  display: inline-block;
+}
+
+nav {
+  background-color: rgb(55, 55, 55);
+}
