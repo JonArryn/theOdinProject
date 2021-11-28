@@ -1,0 +1,42 @@
+html {
+  background-color: #373c48;
+}
+
+.reset {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.reset > button {
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 640px;
+  height: 640px;
+  margin: 0 auto;
+}
+
+.etch__div {
+  flex: 1 1 auto;
+  color: #181c23;
+  background-color: #181c23;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.column {
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.hovered {
+  background-color: #d6d3d3;
+}
+
+/* https://paletton.com/#uid=43K0U1k8ndu8Kli8NhF7C7QbD6Ekv1XpuJ+WuL+wJyRuLlPfkmcc1cYatikbSqoaVwz8Vk0sqS0eKC0Srq1AqH2uqs base RBG 373C48 */ ;
