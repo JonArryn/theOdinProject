@@ -5,6 +5,7 @@ const resetBtn = document.querySelector(".reset__button");
 
 const etchContainer = document.querySelector(".container");
 const etchDiv = document.createElement("div");
+let etchDivs = document.querySelectorAll(".etch__div");
 
 function createGrid(gridSize) {
   // create row divs
@@ -23,13 +24,13 @@ function createGrid(gridSize) {
       columnDiv.classList.add("column");
       // append columns to each row div
       rowDiv.appendChild(columnDiv);
+      // ensure etchDivs points to all created divs
+      etchDivs = document.querySelectorAll(".etch__div");
     }
   }
 }
 
 createGrid(64);
-
-let etchDivs = document.querySelectorAll(".etch__div");
 
 // // add color-changing hover affect
 function sketch() {
@@ -71,7 +72,8 @@ function newGrid() {
     etchContainer.textContent = "";
     // rebuild grid with new value
     createGrid(newGridSize);
-    etchDivs = document.querySelectorAll(".etch__div");
     sketch();
   }
 }
+let object = { a: "b", c: "d" };
+log(object);
