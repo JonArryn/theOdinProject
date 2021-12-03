@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="calculator.js" defer></script>
+  <link href="calculator.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+<html lang="en">
+  <body>
+    <div class="main__container">
+      <div class="display__container">
+        <div id="display">
+          <span id="number__span">0</span>
+        </div>
+      </div>
+      <div class="pad__container">
+        <div class="number__container">
+          <div class="button__container">
+            <div class="button number" data-value="7">7</div>
+            <div class="button number" data-value="8">8</div>
+            <div class="button number" data-value="9">9</div>
+          </div>
+          <div class="button__container">
+            <div class="button number" data-value="4">4</div>
+            <div class="button number" data-value="5">5</div>
+            <div class="button number" data-value="6">6</div>
+          </div>
+          <div class="button__container">
+            <div class="button number" data-value="1">1</div>
+            <div class="button number" data-value="2">2</div>
+            <div class="button number" data-value="3">3</div>
+          </div>
+          <div id="zero" class="button__container zero__container">
+            <div class="button zero number" data-value="0">0</div>
+            <div class="button decimal number" data-value=".">.</div>
+            <div class="button backspace">&larr;Del</div>
+          </div>
+          <div class="button__container clear__container">
+            <div class="button clear">C</div>
+          </div>
+        </div>
+        <div class="operator__container">
+          <div class="button__container operators">
+            <div class="button equals">=</div>
+            <div class="button operator" data-operation="+">+</div>
+            <div class="button operator" data-operation="-">-</div>
+            <div class="button operator" data-operation="/">&divide;</div>
+            <div class="button operator" data-operation="*">x</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
