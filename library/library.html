@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="library.js" defer></script>
+    <link href="library.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="header">
+        <h1>Shh! This is a Library.</h1>
+      </div>
+      <div class="main__content">
+        <div class="form__container">
+          <h2>Add a Book to the Your Library</h2>
+          <p>Fill out the form to add a book to the library.</p>
+          <form class="book__form">
+            <div class="form__row">
+              <label for="title">Book Title</label>
+              <input type="text" id="title" name="title" />
+            </div>
+            <div class="form__row">
+              <label for="author">Author</label>
+              <input type="text" id="author" name="author" />
+            </div>
+            <div class="form__row">
+              <label for="pages">Number of Pages</label>
+              <input type="text" id="pages" name="pages" />
+            </div>
+            <div class="form__row">
+              <label for="status">Read Status</label>
+              <select id="status" name="status">
+                <option value=""></option>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Complete">Complete</option>
+              </select>
+            </div>
+            <button type="submit" id="form__submit" name="">Add Book</button>
+          </form>
+        </div>
+        <div class="library__container">
+          <!-- <div class="book__tile">
+            <div>Lord Of The Rings: The Hobbit</div>
+            <div>J.R.R. Tolkien And All his friends are on the way</div>
+            <div>296</div>
+            <div>Have Read? Yes!</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="footer">I'm a footer</div>
+    </div>
+    <!-- Modal Section -->
+    <div class="global__modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <p>Change Read Status</p>
+          <div>&#10005;</div>
+        </div>
+        <div class="modal__text">
+          <p></p>
+        </div>
+        <div class="modal__buttons">
+          <button>Here is a Button</button>
+          <button>Here is a Button</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

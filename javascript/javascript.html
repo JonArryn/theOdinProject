@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="javascript.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript</h1>
+    <h2>Objects and Object Constructors</h2>
+    <h3>Introduction</h3>
+    <p>
+      In our JavaScript fundamentals course, you should have learned the basics
+      of using objects to store and retrieve data. Let's start with a little
+      refresher
+    </p>
+    <p>
+      There are multiple ways to define objects but in most cases, it is best to
+      use the OBJECT LITERAL syntax as follows
+    </p>
+    <code>
+      const myObject = {<br />
+      property: 'Value!'<br />
+      otherProperty: 77,<br />
+      "obnoxious property": function() {<br />
+      // do stuff!<br />
+      }<br />
+      }
+    </code>
+    <p>
+      There are also 2 ways to get information out of an object: dot notataion
+      and bracket notation.
+    </p>
+    <code>
+      // dot notation <br />
+      myObject.peroprty // 'Value!'<br />
+      <br />
+      // bracket notation <br />
+      myObject["obnoxious property"] // [Function]
+    </code>
+    <p>
+      Which method you use will depend on context. Dot notation is cleaner and
+      is usually preferred, but there are plenty of circustances when it is not
+      possible to use it. For example, myObject."obnoxious property" won't work
+      because that property is a sstring with a space in it. Likewise, you
+      cannot use variables in dot notation:
+    </p>
+    <code>
+      const variable = 'property'<br />
+      <br />
+      myObject.variable // undefined (looking for property named variable)<br />
+      <br />
+      myObject[variable] // equal to myObject["property"]
+    </code>
+    <h3>Learning Outcomes</h3>
+    <p>By the end of this lesson, you should be able to do the following:</p>
+    <ul>
+      <li>Write an object constructor and instantiate the object.</li>
+      <li>Describe what a prototype is and how it can be used.</li>
+      <li>Explain prototypal inhertiance.</li>
+      <li>Understand the basic do's and dont's of prototypical inhertiance.</li>
+      <li>Explain what Object.create does.</li>
+    </ul>
+    <h3>Objects as a Design Pattern</h3>
+    <p>
+      One of the simplest ways you can begin to organize your code is by simply
+      grouping things into objects. Take these examples from a 'tic tac toe'
+      game.
+    </p>
+    <code>
+      const playerOneName = "tim",<br />
+      const playerTwoName = "jenn",<br />
+      const playerOneMarker = "X", <br />
+      const playerTwoMarker = "O", <br />
+      <br />
+      // example two<br />
+      const playerOne = {<br />
+      name: "tim",<br />
+      marker: "X",<br />
+      }
+      <br />
+      const playerTwo = {<br />
+      name: "jenn",<br />
+      marker: "O",<br />
+      }
+    </code>
+    <p>
+      At frist glance, the first one doesn't seem so bad.. and it actually takes
+      fewer lines to write than the example using objects, but the benefits of
+      the second approach are huge!
+    </p>
+    <code>
+      function printName(player){<br />
+      console.log(player.name)<br />
+      }
+    </code>
+    <p>
+      This is something that you could NOT do with the example one setup.
+      Instead, every time you wanted to print a specific player's name, you
+      would have to remember the correct variable name and then manually
+      console.log it.
+    </p>
+    <code>
+      console.log(playerOneName)<br />
+      console.log(playerTwoName)<br />
+    </code>
+    <p>
+      Again, this isn't THAT bad... but what if you odn't know which player's
+      name you want to print?
+    </p>
+    <code>
+      function gameOver(winningPlayer){<br />
+      console.log("Congratulations!")<br />
+      console.log(winningPlayer.name + "is the winner!")<br />
+      }
+    </code>
+    <p>
+      Or, what if we aren't making a 2 player game, but something more
+      complicated such as an online shopping site with a large inventory? In
+      that case, using objects to keep track of an item's name, price,
+      description and other things is the only way to go. Unfortunately, in that
+      type of situation, manually typing out the contents of our objects is not
+      feasible either. We need a clearner way to create our objects, which
+      brings us to...
+    </p>
+    <h3>Object Constructors</h3>
+    <p>
+      WHen you have a specific type of object that you need to duplicate like
+      our player or inventory items, a better way to create them is using an
+      object constructor, which is a function that looks like this:
+    </p>
+    <code>
+      function Player(name, marker) {<br />
+      this.name = name<br />
+      this.marker = marker<br />
+      }
+    </code>
+    <p>and which you use by calling the funciton with the keyword new.</p>
+    <code>
+      const player = new Player('steve', 'X')<br />
+      console.log(player.name) //'steve'
+    </code>
+    <p>
+      Just like with objects created using the Object Literal method, you can
+      add functions to the object:
+    </p>
+    <code>
+      function Player(name, marker){<br />
+      this.name = name<br />
+      this.marker = marker<br />
+      this.sayName = function(){<br />
+      console.log(name)<br />
+      }<br />
+      }<br />
+      <br />
+      const player1 = new Player('steve', 'X')<br />
+      const player2 = new Player('also steve', 'O')<br />
+      player1.sayName() // logs 'steve'<br />
+      player2.sayName() // logs 'also steve'
+    </code>
+    <h3>Exercise</h3>
+    <p>
+      Write a consturctor for making "Book" objects. We will revisit this in the
+      project at the end of the lesson. Your book objects should have the book's
+      title, author, the number of pages, and whether or not you have read the
+      book.
+    </p>
+    <p>
+      Put a function into the consstructor that can report the book info like
+      so:
+    </p>
+    <code>
+      theHobbit.info() // "The Hobbit by J.R.R. Tolkien, 295 pages, not read
+      yet"
+    </code>
+    <p>
+      Note: It is almost ALWYAS best to return things rather than putting
+      console.log( directly into the function. In this case, return the info
+      string and log it after the function has been called
+    </p>
+    <code>console.log(theHobbit.info())</code>
+    <h3>The Prototype</h3>
+    <p>
+      Before we go much further, there's something important you need to
+      understand about JavaScript objects. All objects in JavaScript have a
+      prototype. Stated simplly, the prototype is another object that the
+      original object inherits from, which is to say, the original object has
+      access to all of its prorotype's methods and properties
+    </p>
+    <p>
+      The concept is an important one, so you've got some reading to do. Make
+      sure you really get this before moving on!
+    </p>
+    <p>
+      If you've understood the concept of the prototype, this next bit about
+      constructors will not be confusing at all.
+    </p>
+    <code>
+      function Student(name, grade){<br />
+      this.name = name<br />
+      this.grade = grade<br />
+      }<br />
+      <br />
+      Student.prototype.sayname = function() {<br />
+      console.log(this.name)<br />
+      }<br />
+      Student.prototype.goToProm = function(){<br />
+      // eh... go to prom?<br />
+      }
+    </code>
+    <p>
+      If you're using constructors to make your objects it is best to define
+      funcitons on the prototype of that object. Doing so means that single
+      instance of each function will be shared between all of the Student
+      objects. If we declare the function directly in the constructor, like we
+      did when they were first introduced, that function would be duplicated
+      every time a new Student is created. In this example, that wouldn't really
+      matte rmuch, but in a project that is creating thousands of objects, it
+      can really make a difference.
+    </p>
+    <h3>Recommended Method for Prototypal Inheritance</h3>
+    <p>
+      So far you ahve seen several wasy of making an object inherit the
+      prototype from another object. At this point in history, the recommend way
+      of setting the prototype of an object is Object.create. Oject.create very
+      simply returns a new object with the specified prototype and any
+      additional properties you want to add. For our own purposes, you use it
+      like so:
+    </p>
+    <code>
+      function Student(){<br />
+      }<br />
+      <br />
+      Student.prototype.sayName = function(){<br />
+      console.log(this.name)<br />
+      }<br />
+      <br />
+      function EighthGrader(name) {<br />
+      this.name = name<br />
+      this.grade = 8<br />
+      }<br />
+      <br />
+      EighthGrader.prototype = Object.create(Student.prototype)<br />
+      <br />
+      const carl = new EighthGrader("carl")<br />
+      carl.sayName() // logs carl<br />
+      carl.grade // 8
+    </code>
+  </body>
+</html>

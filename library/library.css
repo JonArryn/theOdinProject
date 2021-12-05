@@ -1,0 +1,171 @@
+body {
+  background-color: #012233;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+#form__submit {
+  all: unset;
+  margin: 10px auto;
+  border: 3px solid white;
+  padding: 5px 20px;
+}
+#form__submit:hover {
+  background-color: #4db5f3;
+}
+
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  height: 800px;
+}
+
+.main__content {
+  display: flex;
+  flex: 1 1 100%;
+  background-color: #0472b3;
+  border-radius: 4px;
+  padding: 4px;
+  gap: 10px;
+}
+
+.form__container {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 0 1 auto;
+  width: 30em;
+  background-color: #034b76;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.book__form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  flex: 0 1 auto;
+  background-color: #046fa9;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.form__row {
+  display: flex;
+  flex: 0 1 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #04a991;
+}
+
+.library__container {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 10px;
+}
+
+.book__tile {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 300px;
+  width: 300px;
+  border-radius: 4px;
+  background-color: #283ba7;
+  flex: 0 1 auto;
+  padding: 10px;
+  text-align: center;
+  font-size: large;
+}
+
+.tile__button {
+  display: flex;
+  gap: 10px;
+}
+
+.tile__button > button {
+  border: none;
+  font-size: medium;
+  border-radius: 5px;
+}
+
+/* .bookId,
+.dataText {
+  display: none;
+} */
+
+label,
+input {
+  flex: 1 1 auto;
+}
+
+span {
+  word-wrap: break-word;
+}
+
+input {
+  all: unset;
+  background-color: white;
+  border-radius: 4px;
+  color: black;
+  padding: 4px;
+}
+select {
+  border: none;
+}
+
+.clicked {
+  background-color: black;
+  color: white;
+}
+
+.footer {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #4db5f3;
+}
+
+.global__modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+}
+
+.modal__content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 auto;
+  width: 50vh;
+  height: 25vh;
+  background-color: white;
+  color: black;
+  padding: 15px;
+}
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.modal__header > p,
+div {
+  flex: 0 1 auto;
+}
